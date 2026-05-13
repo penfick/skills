@@ -41,7 +41,7 @@ Each subdirectory is an independent skill containing a `SKILL.md` file, complian
 
 ## Friends
 
-https://linux.do/
+ [LinuxDo](https://linux.do) 
 
 ## License
 

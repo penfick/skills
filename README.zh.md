@@ -41,7 +41,7 @@ skills/
 
 ## 友情链接
 
-https://linux.do/
+ [LinuxDo](https://linux.do) 
 
 ## License
 
