@@ -29,7 +29,7 @@ npx skills add https://github.com/penfick/skills --skill vision-support -g -y
 npm install -g vision-support
 ```
 
-安装后自动注册全局命令 `vision-support`，同时自动将 skill 文件复制到 `~/.agents/skills/`。
+安装后自动注册全局命令 `vision-support`，同时自动将 skill 文件复制到所有 agent 的 skills 目录。
 
 ### Mac / Linux 一行命令
 
@@ -37,14 +37,7 @@ npm install -g vision-support
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/penfick/skills/main/vision-support/install.sh)"
 ```
 
-### Windows (PowerShell)
-
-```powershell
-git clone https://github.com/penfick/skills.git $env:TEMP\skills
-node $env:TEMP\skills\vision-support\install.mjs
-```
-
-### 手动安装
+### Git Clone（手动安装）
 
 ```bash
 git clone https://github.com/penfick/skills.git ~/.agents/skills
@@ -53,52 +46,77 @@ git clone https://github.com/penfick/skills.git ~/.agents/skills
 ### 卸载
 
 ```bash
-# npx skills
-npx skills remove vision-support
-
 # npm
 npm uninstall -g vision-support
 
-# 其他方式
+# npx skills
+npx skills remove vision-support
+
+# 手动安装的
 node install.mjs --uninstall
 ```
 
-## 快速开始
+## 初始化（配置模型）
+
+安装后需要配置一个识图模型，只做一次。
+
+### npm 用户
 
 ```bash
-# 1. 初始化（交互式选平台 → 填密钥 → 选模型）
 vision-support init
-# 或
+```
+
+### git / npx skills 用户
+
+```bash
+# Git Bash / Mac / Linux 终端
 node ~/.agents/skills/vision-support/scripts/vision.mjs init
 
-# 2. 验证
-vision-support config test
+# Windows PowerShell
+node "$HOME\.agents\skills\vision-support\scripts\vision.mjs" init
+```
 
-# 3. 识图
-vision-support ./screenshot.png
+### 在 Agent 中（Pi / Claude Code）
+
+```
+/vision-support 帮我初始化配置
+/vision-support 帮我用 gemini-2.5-flash 配置主模型，API key 是 xxx
 ```
 
 ## 使用方法
 
-### 识别图片
+### npm 用户
 
 ```bash
-# 单张
 vision-support ./image.png
-
-# 多张对比
-vision-support img1.png img2.png "对比这两张图"
-
-# URL 图片
+vision-support img1.png img2.png "对比两张图"
 vision-support https://example.com/img.png "描述图片"
-
-# 自定义提问
-vision-support ./ui.png "这个界面有什么布局问题？"
 ```
 
-### 配置管理
+### git / npx skills 用户
 
 ```bash
+# Git Bash / Mac / Linux
+node ~/.agents/skills/vision-support/scripts/vision.mjs ./image.png
+
+# Windows PowerShell
+node "$HOME\.agents\skills\vision-support\scripts\vision.mjs" ./image.png
+```
+
+### 在 Agent 中
+
+发送图片后说 `看看这张图` / `分析这个截图`，自动触发。或手动：
+
+```
+/vision-support 看看这张图
+```
+
+## 配置管理
+
+```bash
+# npm 用户直接用 vision-support 命令
+# git / npx skills 用户替换为 node ~/.agents/skills/vision-support/scripts/vision.mjs
+
 vision-support init                    # 交互式初始化
 vision-support config add              # 添加 fallback 模型
 vision-support config edit [name]      # 编辑模型
@@ -109,11 +127,6 @@ vision-support config set-key <n> <k>  # 设置密钥
 vision-support config set-url <n> <u>  # 设置 API 地址
 vision-support config test [name]      # 测试连通性
 ```
-
-### 在 Agent 中触发
-
-- **自动**：发送图片 + 说"看看这个截图"/"分析这个界面" → 自动触发
-- **手动**：`/skill:vision-support` 或 `/vision`
 
 ## 支持的平台
 
@@ -131,9 +144,9 @@ vision-support config test [name]      # 测试连通性
        ↓
  Agent 读取 SKILL.md，调用 vision.mjs
        ↓
- 主视觉模型 (GPT-4o) ──成功──→ 返回识别结果
+ 主视觉模型 (Gemini) ──成功──→ 返回识别结果
        ↓ 失败
- Fallback 1 (Gemini) ──成功──→ 返回识别结果
+ Fallback 1 (GPT-4o) ──成功──→ 返回识别结果
        ↓ 失败
  Fallback 2 (Qwen-VL) ──成功──→ 返回识别结果
        ↓
@@ -143,19 +156,22 @@ vision-support config test [name]      # 测试连通性
 ## 目录结构
 
 ```
-vision-support/
-├── SKILL.md                  # 技能说明（Agent 自动读取）
-├── package.json              # npm 包配置
-├── bin/
-│   ├── cli.mjs               # npm 全局命令入口
-│   └── postinstall.mjs       # npm 安装后自动部署 skill
-├── install.mjs               # 跨平台安装脚本
-├── install.sh                # Mac/Linux 一键安装
-├── config.example.json       # 配置模板
-├── scripts/
-│   └── vision.mjs            # 核心脚本（零依赖）
-└── references/
-    └── supported-models.md   # 模型配置参考
+skills/
+├── README.md                    ← repo 说明
+├── LICENSE
+└── vision-support/
+    ├── SKILL.md                 ← skill 入口（Agent 自动读取）
+    ├── package.json
+    ├── bin/
+    │   ├── cli.mjs              ← npm 全局命令入口
+    │   └── postinstall.mjs      ← npm 安装后自动部署 skill 文件
+    ├── install.mjs              ← 跨平台安装脚本
+    ├── install.sh               ← Mac/Linux 一键安装
+    ├── config.example.json      ← 配置模板
+    ├── scripts/
+    │   └── vision.mjs           ← 核心脚本（零依赖）
+    └── references/
+        └── supported-models.md
 ```
 
 ## License
