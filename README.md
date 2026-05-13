@@ -1,22 +1,22 @@
 # Agent Skills by penfick
 
-一个 Agent Skills 集合，适用于 Claude Code / Codex / Pi Agent / 任何支持 [Agent Skills](https://agentskills.io) 标准的工具。
+A collection of Agent Skills for Claude Code / Codex / Pi Agent / any tool supporting the [Agent Skills](https://agentskills.io) standard.
 
 ## Skills
 
-| Skill | 说明 |
-|-------|------|
-| [vision-support](./vision-support/) | 为非多模态模型提供图片识别能力，支持多图识别、19+ 平台、主备回退 |
+| Skill | Description |
+|-------|-------------|
+| [vision-support](./vision-support/) | Image recognition for non-multimodal AI models. Multi-image support, 19+ platforms, auto-fallback. |
 
-## 安装
+## Install
 
-### `npx skills`（推荐）
+### `npx skills` (Recommended)
 
 ```bash
-# 安装指定 skill
+# Install a specific skill
 npx skills add https://github.com/penfick/skills --skill vision-support -g -y
 
-# 查看所有可用 skill
+# List all available skills
 npx skills add https://github.com/penfick/skills --list
 ```
 
@@ -26,7 +26,7 @@ npx skills add https://github.com/penfick/skills --list
 git clone https://github.com/penfick/skills.git ~/.agents/skills
 ```
 
-## 目录结构
+## Structure
 
 ```
 skills/
@@ -37,9 +37,9 @@ skills/
     └── ...
 ```
 
-每个子目录是一个独立 skill，包含 `SKILL.md`，符合 [Agent Skills 规范](https://agentskills.io/specification)。
+Each subdirectory is an independent skill containing a `SKILL.md` file, compliant with the [Agent Skills specification](https://agentskills.io/specification).
 
-## 友情链接
+## Friends
 
 https://linux.do/
 

@@ -32,6 +32,7 @@
     "references",
     "SKILL.md",
     "config.example.json",
+    "images",
     "install.mjs",
     "install.sh"
   ],
