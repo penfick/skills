@@ -1,0 +1,104 @@
+{
+  "_note": "SCHEMA SAMPLE ONLY — teaches outline JSON shape for NVIDIA-like company decks. Do NOT copy this file's facts/segments/numbers into decks about other companies.",
+  "meta": {
+    "title": "英伟达公司介绍",
+    "subtitle": "全球 AI 计算的领导者",
+    "author": "pptskill",
+    "lang": "zh-CN",
+    "theme": "dark-keynote",
+    "slide_size": "16:9"
+  },
+  "slides": [
+    {
+      "type": "cover",
+      "title": "英伟达公司介绍",
+      "subtitle": "全球 AI 计算的领导者",
+      "eyebrow": "NVIDIA CORPORATION",
+      "notes": "开场：英伟达公司概览，约15页覆盖概况、发展、产品、财务与展望。"
+    },
+    {
+      "type": "agenda",
+      "title": "目录",
+      "subtitle": "本次分享的五个板块",
+      "items": [
+        {"title": "公司概况", "desc": "定位、总部、规模与关键事实"},
+        {"title": "发展脉络", "desc": "从 1993 创业到 AI 时代的关键跃迁"},
+        {"title": "产品与技术", "desc": "芯片、平台、网络与软件生态"},
+        {"title": "业务与市场", "desc": "财务结构、护城河与行业落地"},
+        {"title": "挑战与展望", "desc": "风险因素与未来方向"}
+      ],
+      "notes": "目录页：快速预告五个板块。"
+    },
+    {
+      "type": "title_body",
+      "title": "公司概况",
+      "subtitle": "成立于 1993 年，总部位于美国加州圣克拉拉",
+      "bullets": [
+        "核心定位：AI 与加速计算平台公司",
+        "创始人 / CEO：黄仁勋（Jensen Huang）",
+        "股票代码：NASDAQ: NVDA",
+        "从 GPU 发明到 AI 基础设施的三十年演进"
+      ],
+      "callout": "已从显卡公司转型为 AI 基础设施平台公司。",
+      "notes": "概况：强调平台化转型。"
+    },
+    {
+      "type": "section",
+      "title": "发展脉络",
+      "subtitle": "游戏显卡 → 通用 GPU → AI 基础设施",
+      "notes": "进入时间线板块。"
+    },
+    {
+      "type": "timeline",
+      "title": "关键跃迁",
+      "subtitle": "CUDA 是所有 AI 故事的基础设施",
+      "milestones": [
+        {"year": "1993", "title": "创立", "desc": "聚焦消费级图形"},
+        {"year": "1999", "title": "GPU 元年", "desc": "GeForce 256"},
+        {"year": "2006", "title": "CUDA", "desc": "通用并行计算"},
+        {"year": "2012", "title": "深度学习", "desc": "AlexNet 用 GPU"},
+        {"year": "2016", "title": "AI 转向", "desc": "发布 DGX"},
+        {"year": "2020+", "title": "平台化", "desc": "AI 工厂"}
+      ],
+      "callout": "CUDA 让 GPU 从画质工具变成通用算力。",
+      "notes": "时间线重点：1999 GPU、2006 CUDA。"
+    },
+    {
+      "type": "two_col",
+      "title": "定位与战略",
+      "subtitle": "不做单颗芯片，而做加速计算平台",
+      "left": {
+        "title": "硬件与系统",
+        "items": ["GPU / CPU / 网络协同", "DGX / HGX 整机", "万卡集群互联"]
+      },
+      "right": {
+        "title": "软件与生态",
+        "items": ["CUDA 与加速库", "AI Enterprise / NIM", "开发者平台锁定"]
+      },
+      "notes": "战略：硬件入口 + 软件壁垒。"
+    },
+    {
+      "type": "data_cards",
+      "title": "业务与财务亮点",
+      "subtitle": "数据中心驱动营收结构变化（量级示意）",
+      "cards": [
+        {"number": "营收跃迁", "label": "AI 需求爆发后进入千亿美元量级"},
+        {"number": "高毛利", "label": "软硬一体与稀缺算力支撑"},
+        {"number": "数据为核", "label": "数据中心贡献绝大部分营收"},
+        {"number": "客户集中", "label": "大型云厂商与 AI 实验室为主"}
+      ],
+      "notes": "财务结构为示意，演示时说明以最新财报为准。"
+    },
+    {
+      "type": "closing",
+      "title": "从卖 GPU 到定义 AI 基础设施",
+      "lines": [
+        "持续迭代架构，压缩每美元智能成本",
+        "AI 工厂与主权 AI 扩大市场纵深",
+        "物理 AI 成为下一增长曲线"
+      ],
+      "thanks": "谢谢观看",
+      "notes": "收束：把算力成本压到让 AI 无处不在。"
+    }
+  ]
+}

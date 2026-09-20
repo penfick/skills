@@ -1,0 +1,116 @@
+{
+  "_note": "SCHEMA SAMPLE ONLY — demonstrates layout types. Do NOT reuse business facts from this file for other topics.",
+  "meta": {
+    "title": "综合能力示例",
+    "subtitle": "图表 · 图文 · 对比 · KPI · 引用",
+    "author": "pptskill",
+    "lang": "zh-CN",
+    "theme": "light-corporate",
+    "slide_size": "16:9"
+  },
+  "slides": [
+    {
+      "type": "cover",
+      "title": "综合能力示例",
+      "subtitle": "覆盖 R2 新版式与多主题",
+      "eyebrow": "PPTSKILL R2",
+      "notes": "演示 R2 图表/图片/对比/KPI/引用。"
+    },
+    {
+      "type": "chart",
+      "title": "营收结构示意",
+      "subtitle": "pie · 主题色系列",
+      "chart": {
+        "kind": "pie",
+        "categories": ["数据中心", "游戏", "专业可视化", "汽车", "其他"],
+        "series": [{"name": "占比", "values": [72, 12, 6, 6, 4]}],
+        "show_legend": true,
+        "show_values": true
+      },
+      "notes": "饼图：数据中心为绝对主体。"
+    },
+    {
+      "type": "chart",
+      "title": "季度增长示意",
+      "subtitle": "bar · 多系列可选",
+      "chart": {
+        "kind": "bar",
+        "categories": ["Q1", "Q2", "Q3", "Q4"],
+        "series": [
+          {"name": "2024", "values": [40, 55, 70, 85]},
+          {"name": "2025", "values": [70, 90, 110, 130]}
+        ],
+        "show_legend": true,
+        "show_values": false
+      },
+      "notes": "柱图示意两年对比。"
+    },
+    {
+      "type": "chart",
+      "title": "能力曲线示意",
+      "subtitle": "line",
+      "chart": {
+        "kind": "line",
+        "categories": ["v0.1", "v0.2", "v0.3", "v1.0"],
+        "series": [
+          {"name": "版式数", "values": [8, 13, 16, 20]},
+          {"name": "主题数", "values": [2, 4, 5, 6]}
+        ],
+        "show_legend": true
+      },
+      "notes": "折线示意能力增长。"
+    },
+    {
+      "type": "image_text",
+      "title": "图文混排",
+      "subtitle": "左侧本地图片 + 右侧要点",
+      "image": {"path": "assets/sample.jpg", "side": "left", "alt": "示例图"},
+      "bullets": [
+        "只支持本地路径，相对 outline 目录解析",
+        "缺文件会在 render 阶段失败",
+        "只给一侧尺寸，保持宽高比"
+      ],
+      "notes": "图文页验证本地图片嵌入。"
+    },
+    {
+      "type": "compare",
+      "title": "方案对比",
+      "subtitle": "highlight 标出推荐侧",
+      "left": {
+        "title": "临时脚本",
+        "items": ["每次手写", "版式漂移", "难复用"]
+      },
+      "right": {
+        "title": "pptskill CLI",
+        "items": ["页纲 JSON 驱动", "固定版式", "可 QA"],
+        "highlight": true
+      },
+      "notes": "对比页：右侧高亮。"
+    },
+    {
+      "type": "kpi",
+      "title": "关键指标",
+      "subtitle": "大数字 KPI",
+      "cards": [
+        {"number": "13", "label": "版式类型", "hint": "含 R2 新增"},
+        {"number": "4", "label": "内置主题", "hint": "发布会/汇报/课件/路演"},
+        {"number": "3", "label": "图表类型", "hint": "pie/bar/line"},
+        {"number": "0", "label": "Office 默认蓝", "hint": "系列色走主题"}
+      ],
+      "notes": "KPI 页。"
+    },
+    {
+      "type": "quote",
+      "text": "确定性渲染器负责版式，agent 负责内容与结构。",
+      "cite": "pptskill 设计原则",
+      "notes": "引用页。"
+    },
+    {
+      "type": "closing",
+      "title": "R2 就绪",
+      "lines": ["图表与图文已可用", "多主题覆盖更多 deck 类型", "下一步：视觉 QA 与增量改页"],
+      "thanks": "谢谢观看",
+      "notes": "收尾。"
+    }
+  ]
+}

@@ -7,6 +7,7 @@ A collection of Agent Skills for Claude Code / Codex / Pi Agent / any tool suppo
 | Skill | Description |
 |-------|-------------|
 | [vision-support](./vision-support/) | Image recognition for non-multimodal AI models. Multi-image support, 19+ platforms, auto-fallback. |
+| [pptx-penfick](./pptx-penfick/) | Generate PowerPoint from a JSON outline (13 layouts, themes, QA). CLI + agent skill. |
 
 ## Install
 
@@ -32,8 +33,12 @@ git clone https://github.com/penfick/skills.git ~/.agents/skills
 skills/
 ├── README.md
 ├── LICENSE
-└── vision-support/
+├── vision-support/
+│   ├── SKILL.md
+│   └── ...
+└── pptx-penfick/
     ├── SKILL.md
+    ├── pyproject.toml  # CLI: uv/pip install
     └── ...
 ```
 

@@ -1,0 +1,8 @@
+{
+  "name": "brand-demo",
+  "extends": "light-corporate",
+  "accent": "#E11D48",
+  "accent_soft": "#FFE4E6",
+  "series": ["#E11D48", "#0EA5E9", "#22C55E", "#F59E0B", "#A855F7"],
+  "font_cjk": "Microsoft YaHei"
+}

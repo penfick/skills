@@ -7,6 +7,7 @@
 | Skill | 说明 |
 |-------|------|
 | [vision-support](./vision-support/) | 为非多模态模型提供图片识别能力，支持多图识别、19+ 平台、主备回退 |
+| [pptx-penfick](./pptx-penfick/) | 用 JSON 页纲生成 PowerPoint（13 种版式、主题、QA）。含 CLI + Agent Skill |
 
 ## 安装
 
@@ -32,8 +33,12 @@ git clone https://github.com/penfick/skills.git ~/.agents/skills
 skills/
 ├── README.md
 ├── LICENSE
-└── vision-support/
+├── vision-support/
+│   ├── SKILL.md
+│   └── ...
+└── pptx-penfick/
     ├── SKILL.md
+    ├── pyproject.toml  # CLI：uv/pip 安装
     └── ...
 ```
 
